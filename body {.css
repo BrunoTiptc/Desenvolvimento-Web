@@ -1,62 +1,63 @@
 body {
-    font-family: Arial, sans-serif
-    background-image: url('background.jpg'); /* ajuste conforme seu caminho */
-    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url(background.jpg);
     background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0 20px;
-    min-height: 100vh;
-    color: #333;
+    background-repeat: repeat;
+
 }
 
-h1 {
+      h1 {
     text-align: center;
     color: white;
     font-size: 36px;
-    padding: 10px;
-    margin-inline: 20%;
-}
+    padding: 10px; /*espaco interno*/
+    margin-inline: 20%; 
 
-.classe {
+}
+    .classe {
     border-radius: 10px;
     text-align: center;
     color: black;
     font-size: 22px;
-    line-height: 1.5;
+    line-height: 1.5;  /*Espaçamento entre linhas*/
     background-color: white;
-    margin-inline: 30%;
+    margin-inline: 30%; 
     padding: 10px;
-    font-weight: 200;
-}
-
-#id {
+    font-weight: 200;   /*fonte em negrito*/
+    
+   
+ }
+ #id {
     border-radius: 10px;
     text-align: center;
     background-color: white;
-    padding: 5px;
-    margin-inline: 25%;
-}
+    padding: 5px;   /* adiciona espaco dentro de um elemento  */
+    margin-inline: 25%; 
 
-.projetos-container {
+   
+ }
+
+ .projetos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* maior que antes */
-    gap: 20px;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
+    gap: 20px; /* Espaço entre os itens */
     padding: 20px;
     margin-top: 20px;
-}
 
-.projeto {
+ }
+
+ .projeto {
+    flex: 1;
     border: 1px solid #ccc;
     padding: 20px;
-    text-align: center;
+    text-align: center; 
     background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
+    box-shadow: 0 4px 6px rgba(0, 0, 0 ,0.1);
+ }
 
-.projeto img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
+ projeto img {
+   width: 100%;
+   height: auto;
+   border-radius: 10px;
+ }
