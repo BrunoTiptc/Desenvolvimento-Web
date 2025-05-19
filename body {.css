@@ -1,63 +1,57 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    background-image: url(background.jpg);
+    background-image: url('imagens/background.jpg');
     background-size: cover;
     background-repeat: repeat;
-
 }
 
-      h1 {
+h1 {
     text-align: center;
     color: white;
     font-size: 36px;
-    padding: 10px; /*espaco interno*/
-    margin-inline: 20%; 
-
+    padding: 10px;
+    margin-inline: 20%;
 }
-    .classe {
+
+.classe {
     border-radius: 10px;
     text-align: center;
     color: black;
     font-size: 22px;
-    line-height: 1.5;  /*Espaçamento entre linhas*/
+    line-height: 1.5;
     background-color: white;
-    margin-inline: 30%; 
+    margin-inline: 30%;
     padding: 10px;
-    font-weight: 200;   /*fonte em negrito*/
-    
-   
- }
- #id {
+    font-weight: 200;
+}
+
+#id {
     border-radius: 10px;
     text-align: center;
     background-color: white;
-    padding: 5px;   /* adiciona espaco dentro de um elemento  */
-    margin-inline: 25%; 
+    padding: 5px;
+    margin-inline: 25%;
+}
 
-   
- }
-
- .projetos-container {
+.projetos-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
-    gap: 20px; /* Espaço entre os itens */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     padding: 20px;
     margin-top: 20px;
+}
 
- }
-
- .projeto {
-    flex: 1;
+.projeto {
     border: 1px solid #ccc;
     padding: 20px;
-    text-align: center; 
+    text-align: center;
     background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0 ,0.1);
- }
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
- projeto img {
-   width: 100%;
-   height: auto;
-   border-radius: 10px;
- }
+.projeto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
