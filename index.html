@@ -1,31 +1,86 @@
-<!Doctype html>
-<html>
-    <head>
-        <title> Portifolio Bruno</title>
-        <link rel="stylesheet" type="text/css" href="body {.css">
-        
-        <meta charset="utf-8"/>        
-    </head>
-    <body>
-        <h1>Bem Vindo ao meu Portifolio ! </h1> 
-        <p class="classe">Aqui é o lugar que voce pode conhecer um pouco mais do meu trabalho!</p>
-        <div id="id"> Estudante de Engenharia de Software e desenvolvoder nas horas vagas</div>
-            <!-- Botão do blog -->
-        <a href="https://dasnuvensblog.blogspot.com" target="_blank" class="botao-blog">Meu Blog: Das Nuvens</a>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+}
 
-        
-        <div class="projetos-container">
-            <div class="projeto"><a href="https://github.com/BrunoTiptc/SOS" target="_blank">
-                <img src="imagens/SOS.jpg" alt="Projeto 1">  
-                <p class="classe">QT creator SOS entregas</p>
-            </a></div>
-            <div class="projeto"><a href="https://github.com/BrunoTiptc/CrochePTC1" target="_blank">
-                <img src="imagens/Croche.png" alt="Projeto 2">  
-                <p class="classe">CrochePTC Android Studeo</p> </div>
-            <div class="projeto">Projeto 3 </div>
-            <div class="projeto">Projeto 4 </div>
-            <div class="projeto">Projeto 5 </div>
-            <div class="projeto">Projeto 6 </div>
-    </div>
-    </body>
-</html>
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.classe {
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+    background-color: white;
+    margin: 20px auto;
+    padding: 10px;
+    font-weight: 400;
+    max-width: 600px;
+}
+
+#id {
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    max-width: 500px;
+}
+
+/* Botão do Blog */
+.botao-blog {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 10px 16px;
+    background-color: #4A90E2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.botao-blog:hover {
+    background-color: #357ABD;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projeto {
+    background-color: #ffffffdd;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.projeto:hover {
+    transform: scale(1.02);
+}
+
+.projeto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
