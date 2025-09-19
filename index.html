@@ -4,55 +4,166 @@
     <meta charset="UTF-8">
     <title>Bem-vindo ao meu Portifólio!</title>
     <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-
-     <div id="id">
-    
+   <div id="id">
     <a href="https://dasnuvensblog.blogspot.com" target="_blank" class="botao-blog">
         Meu Blog: Das Nuvens
     </a>
-
     <p>Estudante de Engenharia de Software e desenvolvedor nas horas vagas</p>
+
+    <div class="links-sociais">
+        <a href="https://github.com/BrunoTiptc" target="_blank" class="botao-blog">
+            GitHub: github.com/BrunoTiptc
+        </a>
+        <a href="https://www.linkedin.com/in/BrunoTiptc/" target="_blank" class="botao-blog">
+            LinkedIn: linkedin.com/in/BrunoTiptc
+        </a>
+    </div>
 </div>
 
 
-    <p class="classe">Aqui é o lugar que você pode conhecer um pouco mais do meu trabalho!</p>
 
+    <!-- Seção de Projetos -->
     <section class="projetos-container">
 
         <div class="projeto">
-            <a href="https://github.com/BrunoTiptc/SOS" target="_blank">
-                <img src="imagens/SOS.jpg" alt="Projeto SOS">
-                <h2 class="titulo-projeto">Projeto 1 – SOS Entregas (Qt)</h2>
-            </a>
+    <a href="https://github.com/BrunoTiptc/SOS" target="_blank">
+        <img src="imagens/SOS.jpg" alt="Projeto SOS">
+        <h2 class="titulo-projeto"><i class="fas fa-desktop"></i> – SOS Entregas QT C++/C CMAKE QML CSS</h2>
+    </a>
         </div>
 
         <div class="projeto">
             <a href="https://github.com/BrunoTiptc/CrochePTC1" target="_blank">
                 <img src="imagens/Croche.png" alt="Projeto Crochê">
-                <h2 class="titulo-projeto">Projeto 2 – Crochê Android</h2>
+                <h2 class="titulo-projeto"><i class="fab fa-android"></i>– Crochê Android JAVA</h2>
             </a>
         </div>
 
         <div class="projeto">
-            <h2 class="titulo-projeto">Projeto 3 – Em construção</h2>
+           <div class="projeto">
+            <a href="https://github.com/BrunoTiptc/AlgoritmoGreidista" target="_blank">
+            <video class="video-projeto" muted loop>
+             <source src="videos/greidista.mp4" type="video/mp4">
+                 Seu navegador não suporta vídeos.
+         </video>
+                <h3 class="titulo-projeto">Algoritmo Greidista C </h3>
+        </div>
+            </a>
         </div>
 
-        <div class="projeto">
-            <h2 class="titulo-projeto">Projeto 4 – Em breve</h2>
+       <div class="projeto">
+        <a href="https://github.com/BrunoTiptc/backend_python/tree/master/desafio_final" target="_blank">
+        <img src="imagens/fastapi.jpg" alt="Projeto FastAPI">
+        <h2 class="titulo-projeto"> – FastAPI Python</h2>
+        </a>
         </div>
 
-        <div class="projeto">
-            <h2 class="titulo-projeto">Projeto 5 – Placeholder</h2>
-        </div>
 
         <div class="projeto">
-            <h2 class="titulo-projeto">Projeto 6 – Placeholder</h2>
+        <a href="https://github.com/BrunoTiptc/backend_python/tree/master/Desafio%20Banco" target="_blank">
+        <img src="imagens/banco.jpg" alt="Projeto Banco">
+        <h2 class="titulo-projeto"> – Projeto Banco</h2>
+        </a>
+        </div>
+        
+      <div class="projeto">
+    <a href="https://www.tinkercad.com/things/hp4dlMslWV6-simulador-gps-chaveiro?sharecode=RG3W22lURcLscRfcWilYYeUWVyCwqpBZPaPMNrVymdE" target="_blank">
+        <img src="imagens/tinkercad.jpg" alt="Simulador GPS Chaveiro">
+        <h2 class="titulo-projeto"><i class="fas fa-map-marker-alt"></i> – Simulador GPS Chaveiro</h2>
+    </a>
         </div>
 
     </section>
+
+   <!-- Seção Sobre Mim -->
+<section id="sobre" class="sobre-mim">
+    <h2>Sobre Mim</h2>
+    <p>Olá! Meu nome é Bruno, sou estudante de Engenharia de Software e desenvolvedor nas horas vagas, movido pela paixão de transformar ideias em soluções reais e impactantes. Desde cedo, a tecnologia sempre me fascinou, seja explorando sistemas, criando algoritmos ou desenvolvendo interfaces que conectam pessoas a experiências únicas.</p>
+    
+    <p>Ao longo da minha jornada, passei por diferentes fases e desafios, aprendendo a superar obstáculos e a valorizar cada aprendizado. Essa trajetória me ensinou que cada erro é uma oportunidade de crescimento, cada projeto concluído é um passo rumo à excelência, e cada linha de código é uma chance de criar algo que faça diferença. Tenho fé em Deus, foco na evolução contínua e uma vontade enorme de construir soluções inovadoras que façam a vida das pessoas mais fácil e produtiva.</p>
+    
+    <p>Minha experiência prática abrange várias áreas da tecnologia: desenvolvi aplicações em <strong>Python, Java e C++</strong>, criei sistemas com <strong>Qt</strong>, aplicativos Android usando <strong>Android Studio</strong>, e aplicações web com <strong>HTML, CSS, JavaScript e FastAPI</strong>. Além disso, explorei automações e testes com <strong>Selenium e PyTest</strong>, trabalhei com <strong>Google Cloud e Firebase</strong> para soluções escaláveis e seguras, e sempre busco aprender novas ferramentas que ampliem minha capacidade de criar e inovar.</p>
+    
+    <p>Mais do que conhecer linguagens e frameworks, meu foco é criar experiências completas: interfaces intuitivas, sistemas que resolvam problemas reais, algoritmos eficientes e automações inteligentes que facilitem a vida do usuário. Cada projeto que realizo é pensado para unir criatividade, usabilidade e impacto, mantendo sempre a qualidade e a segurança como prioridades.</p>
+    
+    <p>Ferramentas e tecnologias que já utilizei e continuo aprimorando:</p>
+    <ul style="list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 0; margin-top: 10px;">
+        <li style="background: #007BFF; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">Python</li>
+        <li style="background: #28a745; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">Java</li>
+        <li style="background: #f0ad4e; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">C++</li>
+        <li style="background: #6f42c1; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">Qt</li>
+        <li style="background: #20c997; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">Android Studio</li>
+        <li style="background: #17a2b8; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">HTML/CSS/JS</li>
+        <li style="background: #fd7e14; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">FastAPI</li>
+        <li style="background: #6610f2; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">Selenium</li>
+        <li style="background: #e83e8c; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">PyTest</li>
+        <li style="background: #007BFF; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">Google Cloud</li>
+        <li style="background: #6610f2; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">Firebase</li>
+        <li style="background: #6c757d; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 500;">MySQL / Oracle</li>
+    </ul>
+
+    <p>Vejo a tecnologia como uma força transformadora, capaz de mudar realidades, melhorar processos e abrir portas para novas oportunidades. Meu objetivo é não apenas desenvolver softwares, mas construir soluções que inspirem e que possam evoluir junto com as necessidades do mundo. Estou constantemente explorando novas ideias, aplicando conceitos de engenharia de software e testando limites para entregar o melhor resultado possível.</p>
+    
+    <p>Em resumo, sou movido por desafios, guiado pela fé e pela visão de um futuro em que posso contribuir com soluções inovadoras. Cada projeto é uma oportunidade de deixar minha marca, aprender mais e inspirar outros. Meu compromisso é continuar evoluindo, sempre com criatividade, disciplina e paixão pelo que faço.</p>
+</section>
+
+<!-- Linha do Tempo -->
+<section class="timeline">
+    <h2>Minha Jornada</h2>
+    <div class="timeline-container">
+
+        <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <h3><i class="fas fa-rocket"></i> Projeto Crochê PTC</h3>
+            <p>
+                Aplicativo Android desenvolvido para vendas de crochê. Criado com foco em usabilidade e experiência do usuário, permitindo aos artesãos gerenciar pedidos de forma prática e intuitiva. 
+                <strong>Tecnologias:</strong> Java, Android Studio, Firebase para gerenciamento de dados e autenticação.
+            </p>
+            <p>Funcionalidades: cadastro de produtos, carrinho de compras, notificações de pedidos e interface responsiva.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <h3><a href="https://github.com/BrunoTiptc/SOS" target="_blank" style="color:#007BFF; text-decoration:none;"><i class="fas fa-shipping-fast"></i> Sistema SOS</a></h3>
+            <p>
+                Sistema desktop feito com Qt/C++ para entregadores. Otimizado para rastrear pedidos em tempo real, agilizando processos e garantindo uma interface clara e responsiva. 
+                <strong>Tecnologias:</strong> C++, Qt, QML, CMake, CSS.
+            </p>
+            <p>Funcionalidades: painel de corridas, histórico de entregas, controle de usuários e relatórios detalhados.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <h3><i class="fas fa-globe"></i> Portfólio Web</h3>
+            <p>
+                Este portfólio web que você acessa agora, criado para mostrar meus projetos, habilidades e visão tecnológica. 
+                <strong>Tecnologias:</strong> HTML, CSS, JavaScript, FastAPI, integração com GitHub.
+            </p>
+            <p>Funcionalidades: seção de projetos com imagens e vídeos, linha do tempo, seção "Sobre Mim" detalhada, responsivo para qualquer tela, hover em vídeos e cards interativos.</p>
+        </div>
+
+    </div>
+</section>
+
+
+    <script>
+    const videos = document.querySelectorAll(".video-projeto");
+
+    videos.forEach(video => {
+        video.addEventListener("mouseenter", () => video.play());
+        video.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0; // volta pro início
+        });
+    });
+</script>
 
 </body>
 </html>
