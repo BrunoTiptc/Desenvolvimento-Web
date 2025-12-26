@@ -1,0 +1,54 @@
+body{font-family:Arial,sans-serif;background:url('imagens/background.jpg') no-repeat center center fixed;background-size:cover;margin:0;padding:0}
+h1{text-align:center;font-size:36px;padding:10px;margin-inline:20%;color:#fff}
+::selection{background:#6A5ACD55;color:#fff}
+
+/* Cards principais */
+#id,.sobre-mim,.timeline,.tecnologias{background:rgba(255,255,255,.15);color:#fff;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.15);transition:.3s;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;text-align:center;margin:30px auto;max-width:900px}
+#id{width:80%;max-width:600px;padding:20px 30px;font-size:1.3rem;font-weight:600}
+#id:hover,.projeto:hover,.sobre-mim:hover,.timeline:hover,.tecnologias:hover{transform:scale(1.02);box-shadow:0 10px 28px rgba(106,90,205,.3)}
+
+/* Botões sociais */
+#id .links-sociais{margin-top:15px;display:flex;justify-content:center;gap:20px}
+.botao-blog{display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#6A5ACD,#9370DB);color:#fff;font-weight:bold;font-size:1.1rem;text-decoration:none;border-radius:8px;box-shadow:0 4px 12px rgba(106,90,205,.3);transition:.3s}
+.botao-blog:hover{background:linear-gradient(135deg,#483D8B,#6A5ACD);transform:scale(1.05)}
+
+/* Projetos */
+.projetos-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px}
+a.projeto{background:rgba(255,255,255,.15);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.15);transition:.3s;display:flex;flex-direction:column;text-decoration:none}
+.projeto img,.video-projeto{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px;display:block}
+.projeto a,.projeto a h2,.titulo-projeto{text-decoration:none!important;color:inherit}
+.titulo-projeto{font-family:'Orbitron','Poppins',sans-serif;font-size:22px;color:#adaac0;margin:20px auto;padding:10px;display:inline-block;text-align:center}
+.projeto:hover .titulo-projeto{color:#fff;text-shadow:0 0 6px rgba(25,9,128,.6)}
+
+/* Títulos de seção */
+.sobre-mim h2,.timeline h2,.tecnologias h2{font-family:'Orbitron','Poppins',sans-serif;color:#7468c0;margin-bottom:25px;font-size:26px;text-align:center}
+
+/* Sobre mim texto (mais legível e cabendo no card) */
+.sobre-mim{padding:24px}
+.sobre-mim p{font-family:'Poppins',sans-serif;font-size:17px;line-height:1.6;color:#f0f0f0;text-align:justify;margin:0 15px 15px}
+
+/* Tecnologias com ícones oficiais */
+.tecnologias{padding:30px}
+.tecnologias-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px}
+.tech{background:rgba(255,255,255,.1);color:#fff;font-weight:600;padding:16px 10px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.15);transition:.25s;text-align:center}
+.tech i{font-size:28px;margin-bottom:8px;display:block;color:#6A5ACD}
+.tech:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(106,90,205,.35)}
+
+/* Timeline com separação elegante */
+.timeline{padding:30px 20px}
+.timeline-container{display:flex;flex-direction:column;gap:12px}
+.timeline-item{background:rgba(255,255,255,.1);padding:18px;border-left:6px solid #6A5ACD;border-radius:10px;box-shadow:0 4px 12px rgba(106,90,205,.1);transition:.3s;position:relative}
+.timeline-item h3{font-size:20px;color:#e8e7f0;margin:0 0 px;font-family:'Orbitron','Poppins',sans-serif}
+.timeline-item p{font-size:16px;color:#f0f0f0;font-family:'Poppins',sans-serif;line-height:1.6;margin:0}
+.timeline-item:not(:last-child)::after{content:"";display:block;width:86%;height:1px;background:rgba(106,90,205,.35);margin:18px auto 0;border-radius:1px}
+
+/* Responsivo */
+@media(max-width:600px){
+  #id{width:92%;font-size:1.1rem}
+  .projetos-container{grid-template-columns:1fr}
+  .titulo-projeto{font-size:18px;margin:10px auto;padding:6px}
+  #id .links-sociais{flex-direction:column;gap:10px}
+  .sobre-mim{padding:18px}
+  .sobre-mim p{font-size:16px;margin:0 10px 12px}
+  .tecnologias-grid{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
+}
