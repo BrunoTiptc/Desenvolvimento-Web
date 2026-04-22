@@ -6,6 +6,7 @@
   <title>Bem-vindo | Bruno César</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/duolingo.css">
   <style>
     body.entrada, html.entrada {
       min-height: 100vh;
@@ -170,6 +171,8 @@
       Orgulhoso membro da comunidade do <strong>Google Developer Program</strong>!
     </div>
 
+
+
     <div class="botoes-container">
       <a href="paginas/sobre.html" class="btn-entrar btn-secundario">Sobre Mim</a>
       <a href="paginas/projetos-qa.html" class="btn-entrar">Projetos de QA</a>
@@ -185,7 +188,58 @@
       <a href="https://g.dev/brunoti" target="_blank" class="botao-social"><i class="fa-brands fa-google"></i> Google Developer</a>
       <a href="https://www.credly.com/users/bruno-cesar-alves/badges#credly" target="_blank" class="botao-social"><i class="fa-solid fa-award"></i> Credly M.</a>
     </div>
+
+    <!-- DUOLINGO CARD MOVIDO PARA O FINAL -->
+    <section class="duolingo-card" style="margin-top: 35px; margin-bottom: 0;">
+      <div class="duo-header">
+        <div class="duo-logo">
+          <span style="font-size: 50px; line-height: 1; filter: drop-shadow(0 0 5px rgba(88,204,2,0.3));" title="Duo">🦉</span>
+          <h3>Duolingo Status</h3>
+        </div>
+        <a href="https://pt.duolingo.com/profile/BrunoTi1" target="_blank" class="duo-btn">Acessar Perfil</a>
+      </div>
+
+      <div class="duo-level-card">
+         <div class="level-info">
+            <span class="level-title">Idioma : Inglês US</span>
+            <span class="level-badge">Nível 30</span>
+         </div>
+      </div>
+
+      <div class="duo-stats">
+        <div class="duo-stat">
+           <span class="stat-icon">🔥</span>
+           <span class="stat-value"><strong id="duo-streak">339</strong> Ofensiva</span>
+        </div>
+        <div class="duo-stat">
+           <span class="stat-icon">⚡</span>
+           <span class="stat-value"><strong id="duo-xp">64.252</strong> XP Total</span>
+        </div>
+      </div>
+      
+      <div class="duo-langs">
+        <div class="lang-badge">Idioma: Espanhol</div>
+        <div class="lang-badge">Idioma: Inglês</div>
+      </div>
+    </section>
   </div>
+
+  <script>
+    async function fetchDuolingoData() {
+      try {
+        const res = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.duolingo.com/2017-06-30/users?username=BrunoTi1'));
+        if (res.ok) {
+          const data = await res.json();
+          const user = data.users[0];
+          document.getElementById('duo-streak').innerText = user.streak;
+          document.getElementById('duo-xp').innerText = user.totalXp.toLocaleString('pt-BR');
+        }
+      } catch(e) {
+        console.error('Falha ao buscar dados do Duolingo', e);
+      }
+    }
+    fetchDuolingoData();
+  </script>
 
 </body>
 </html>
