@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre Mim | Bruno César</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="../estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header id="id">
+  <div style="margin-bottom: 20px;">
+    <a href="../index.html" class="botao-social" style="background:rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+  </div>
+  <h1>Minha Trajetória</h1>
+</header>
+
+<section id="sobre" class="sobre-mim"><h2>Sobre Mim</h2>
+<p>👋 Olá, eu sou o Bruno! QA Júnior em formação e Engenheiro de Software em evolução contínua.</p>
+<p>Ser detalhista e curioso me define. Orgulhosamente <strong>Pai do Arthur</strong>, aplico a mesma dedicação de casa no meu desenvolvimento profissional. Sou focado em garantir <strong>qualidade, automação e a construção de sistemas confiáveis</strong>.</p>
+<p>Atuo lidando com <strong>QA, Python, C++, Java e Cloud</strong>. Meus principais estudos hoje envolvem testes automatizados (Cypress, Selenium, PyTest, Postman), estrutura de dados, Cloud (Google Cloud) e Inteligência Artificial. Além disso, integro a comunidade oficial do <strong>Google Developer Program</strong>.</p>
+<p>Busco constante aprendizado, seja escalando infraestruturas ou me desafiando em novos idiomas (tenho Inglês intermediário e sou iniciante em Japonês, Francês e Espanhol).</p>
+</section>
+
+<section class="timeline"><h2>Minha Jornada</h2><div class="timeline-container">
+  <div class="timeline-item"><div class="timeline-year">2015</div><h3>Web Design</h3><p>CorelDRAW, Photoshop e HTML básico. Primeiro contato com tecnologia.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2017</div><h3>Câmara Municipal</h3><p>Pacote Office completo – Digitação e produtividade.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2022–2026</div><h3>Engenharia de Software</h3><p>UNICESUMAR EAD – Desenvolvimento, testes, cloud, dados e IA.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2023</div><h3>SENAC MG</h3><p>Manutenção e montagem de computadores.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2025</div><h3>Cloud & QA</h3><p>Google Cloud Skill Boost, DIO (Python, QA Java) e IA aplicada.</p></div>
+</div></section>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('header, section h2, .sobre-mim p, .timeline-item').forEach((el) => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

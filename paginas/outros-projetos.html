@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Projetos Pessoais | Bruno César</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="../estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .projeto-icon {
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5rem;
+      background: rgba(0, 0, 0, 0.2);
+      color: #0dcaf0;
+      border-radius: 14px 14px 0 0;
+      transition: all 0.3s;
+    }
+    .projeto:hover .projeto-icon {
+      color: #fff;
+      background: rgba(106, 90, 205, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header id="id">
+  <div style="margin-bottom: 20px;">
+    <a href="../index.html" class="botao-social" style="background:rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+  </div>
+  <p>Projetos Pessoais <br><br> Repositórios com estudos em algoritmos, engenharia de software e outras linguagens.</p>
+</header>
+
+<section class="projetos-container">
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/AlgoritmoGreidista" target="_blank">
+    <div class="projeto-icon"><i class="fa-solid fa-code-branch"></i></div>
+    <h2 class="titulo-projeto">
+      🧩 Algoritmo Greidista <br> Estudando implementações de Algoritmos.
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/SOS" target="_blank">
+    <div class="projeto-icon"><i class="fa-solid fa-life-ring"></i></div>
+    <h2 class="titulo-projeto">
+      🚑 Projeto SOS <br> Sistema e implementação SOS.
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/JAVA" target="_blank">
+    <div class="projeto-icon"><i class="devicon-java-plain"></i></div>
+    <h2 class="titulo-projeto">
+      ☕ Java Projects <br> Projetos e atividades em Java.
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/EngenhariadeSoftware" target="_blank">
+    <div class="projeto-icon"><i class="fa-solid fa-laptop-code"></i></div>
+    <h2 class="titulo-projeto">
+      ⚙️ Engenharia de Software <br> Estudos e práticas na faculdade.
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/C" target="_blank">
+    <div class="projeto-icon"><i class="devicon-c-plain"></i></div>
+    <h2 class="titulo-projeto">
+      💻 Projetos C <br> Fundamentos de programação na linguagem C.
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/store_api" target="_blank">
+    <div class="projeto-icon"><i class="fa-solid fa-store"></i></div>
+    <h2 class="titulo-projeto">
+      🛒 Store API <br> Desenvolvimento backend de loja (API).
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/santander-python-ia" target="_blank">
+    <div class="projeto-icon"><i class="fa-solid fa-robot"></i></div>
+    <h2 class="titulo-projeto">
+      🤖 Santander Python IA <br> Bootcamp Santander: Python e IA.
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/Python-Ciencia-de-Dados" target="_blank">
+    <div class="projeto-icon"><i class="fa-solid fa-chart-line"></i></div>
+    <h2 class="titulo-projeto">
+      📊 Ciência de Dados <br> Manipulação de dados e análises com Python.
+    </h2>
+  </a>
+
+  <a class="projeto" href="https://github.com/BrunoTiptc/CrochePTC1" target="_blank">
+    <div class="projeto-icon"><i class="fa-solid fa-shirt"></i></div>
+    <h2 class="titulo-projeto">
+      🧶 Ecommerce Crochê <br> Repositório web do site Croche PTC.
+    </h2>
+  </a>
+
+</section>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('header, .projeto').forEach((el) => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
