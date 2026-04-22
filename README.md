@@ -44,8 +44,12 @@ Este projeto é um portfólio pessoal desenvolvido com tecnologias básicas da w
 ```bash
 Desenvolvimento-Web/
 ├── index.html
-├── style.css
-├── script.js
+├── estilo.css
+├── paginas/
+│   ├── projetos-qa.html
+│   ├── outros-projetos.html
+│   └── sobre.html
 ├── imagens/
 │   └── (icones e banners)
 └── README.md
+```
