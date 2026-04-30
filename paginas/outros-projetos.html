@@ -9,20 +9,129 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
+    .categoria-header {
+      text-align: center;
+      margin: 60px auto 20px auto;
+      max-width: 900px;
+      padding: 15px 20px;
+      background: linear-gradient(90deg, transparent, rgba(13, 202, 240, 0.05), transparent);
+      border-bottom: 2px solid rgba(13, 202, 240, 0.2);
+      border-radius: 10px;
+    }
+    .categoria-header h2 {
+      font-size: 2rem;
+      margin: 0 0 10px 0;
+      color: #0dcaf0;
+      text-shadow: 0 0 12px rgba(13, 202, 240, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    .categoria-header p {
+      color: #a0a0a0;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .projetos-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .projeto-detalhado {
+      background: rgba(20, 20, 30, 0.55);
+      border: 1px solid rgba(106, 90, 205, 0.3);
+      border-radius: 16px;
+      padding: 25px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .projeto-detalhado:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(13, 202, 240, 0.25);
+      border-color: #0dcaf0;
+    }
+    .projeto-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 15px;
+    }
     .projeto-icon {
-      height: 200px;
+      font-size: 3rem;
+      color: #0dcaf0;
+      background: rgba(0, 0, 0, 0.4);
+      min-width: 75px;
+      height: 75px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 5rem;
-      background: rgba(0, 0, 0, 0.2);
-      color: #0dcaf0;
-      border-radius: 14px 14px 0 0;
-      transition: all 0.3s;
+      border-radius: 14px;
+      box-shadow: inset 0 0 10px rgba(13, 202, 240, 0.1);
     }
-    .projeto:hover .projeto-icon {
+    .projeto-title h3 {
+      font-family: 'Orbitron', sans-serif;
       color: #fff;
-      background: rgba(106, 90, 205, 0.2);
+      font-size: 1.35rem;
+      margin: 0 0 6px 0;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+    .projeto-title p {
+      margin: 0;
+      color: #bbb;
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+    .projeto-body {
+      padding-top: 5px;
+    }
+    .projeto-body ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #dcdce4;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .projeto-body li {
+      margin-bottom: 6px;
+    }
+    .projeto-impacto {
+      margin-top: 20px;
+      background: linear-gradient(90deg, rgba(13, 202, 240, 0.1), transparent);
+      border-left: 4px solid #0dcaf0;
+      padding: 12px 18px;
+      border-radius: 4px;
+      color: #f0f0f0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .projeto-impacto strong {
+      color: #0dcaf0;
+      font-weight: 600;
+    }
+    
+    @media(max-width: 600px) {
+      .projeto-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .projeto-icon {
+        margin-bottom: 10px;
+      }
+      .categoria-header h2 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
@@ -32,72 +141,242 @@
   <div style="margin-bottom: 20px;">
     <a href="../index.html" class="botao-social" style="background:rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
   </div>
-  <p>Projetos Pessoais <br><br> Repositórios com estudos em algoritmos, engenharia de software e outras linguagens.</p>
+  <p style="font-size: 1.3rem;"><strong>Projetos Pessoais</strong> <br><br> Repositórios com meus estudos divididos em arquiteturas e linguagens.</p>
 </header>
 
-<section class="projetos-container">
+<!-- Categoria 1: Algoritmos e Linguagens -->
+<div class="categoria-header reveal">
+  <h2><i class="fa-solid fa-code"></i> Algoritmos e Linguagens</h2>
+  <p>Fundamentos, estruturas de dados, IA e aprofundamento em linguagens.</p>
+</div>
+<section class="projetos-lista">
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/AlgoritmoGreidista" target="_blank">
-    <div class="projeto-icon"><i class="fa-solid fa-code-branch"></i></div>
-    <h2 class="titulo-projeto">
-      🧩 Algoritmo Greidista <br> Estudando implementações de Algoritmos.
-    </h2>
+  <!-- Node.js -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/NodeJs" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-nodejs-plain colored"></i></div>
+      <div class="projeto-title">
+        <h3>🟢 Backend com Node.js (JavaScript)</h3>
+        <p>Exploração de backend com foco em APIs e preparação para testes.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Criação de servidores HTTP</li>
+        <li>Estruturação de rotas</li>
+        <li>Manipulação de requisições e respostas</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Base sólida para testes de API e automação com ferramentas modernas.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/SOS" target="_blank">
-    <div class="projeto-icon"><i class="fa-solid fa-life-ring"></i></div>
-    <h2 class="titulo-projeto">
-      🚑 Projeto SOS <br> Sistema e implementação SOS.
-    </h2>
+  <!-- Ciência de Dados -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/Python-Ciencia-de-Dados" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-python-plain colored"></i></div>
+      <div class="projeto-title">
+        <h3>📊 Análise de Dados com Python</h3>
+        <p>Projetos voltados à manipulação e interpretação de dados.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Tratamento e transformação de dados</li>
+        <li>Análise exploratória</li>
+        <li>Uso de bibliotecas de dados</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Desenvolvimento de raciocínio analítico aplicado a dados.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/JAVA" target="_blank">
-    <div class="projeto-icon"><i class="devicon-java-plain"></i></div>
-    <h2 class="titulo-projeto">
-      ☕ Java Projects <br> Projetos e atividades em Java.
-    </h2>
+  <!-- Inteligência Artificial -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/santander-python-ia" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-python-plain colored"></i></div>
+      <div class="projeto-title">
+        <h3>🤖 Inteligência Artificial com Python (Cursor IA)</h3>
+        <p>Projetos com foco em IA aplicada e experimentação de modelos.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Aplicação de conceitos de IA</li>
+        <li>Manipulação de dados para modelos</li>
+        <li>Testes de comportamento de sistemas inteligentes</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Base para validação e testes de sistemas baseados em IA.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/EngenhariadeSoftware" target="_blank">
-    <div class="projeto-icon"><i class="fa-solid fa-laptop-code"></i></div>
-    <h2 class="titulo-projeto">
-      ⚙️ Engenharia de Software <br> Estudos e práticas na faculdade.
-    </h2>
+  <!-- Java -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/JAVA" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-java-plain colored"></i></div>
+      <div class="projeto-title">
+        <h3>☕ Backend e Lógica com Java (POO)</h3>
+        <p>Projetos práticos com foco em orientação a objetos e estrutura de sistemas.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Implementação de classes, objetos e encapsulamento</li>
+        <li>Manipulação de dados e regras de negócio</li>
+        <li>Organização de código</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Consolidação de conceitos de arquitetura e modelagem de sistemas.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/C" target="_blank">
-    <div class="projeto-icon"><i class="devicon-c-plain"></i></div>
-    <h2 class="titulo-projeto">
-      💻 Projetos C <br> Fundamentos de programação na linguagem C.
-    </h2>
+  <!-- C -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/C" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-c-plain colored"></i></div>
+      <div class="projeto-title">
+        <h3>💻 Programação de Baixo Nível (C)</h3>
+        <p>Estudos voltados ao funcionamento interno e controle de memória.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Manipulação de ponteiros</li>
+        <li>Estruturas de dados fundamentais</li>
+        <li>Controle de memória e performance</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Compreensão aprofundada de como o software se comporta em nível estrutural.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/store_api" target="_blank">
-    <div class="projeto-icon"><i class="fa-solid fa-store"></i></div>
-    <h2 class="titulo-projeto">
-      🛒 Store API <br> Desenvolvimento backend de loja (API).
-    </h2>
+  <!-- Algoritmo Greidista (Pedreiro) -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/AlgoritmoGreidista" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-c-plain colored"></i></div>
+      <div class="projeto-title">
+        <h3>🧱 Algoritmo Greidista em C (Console)</h3>
+        <p>Lógica focada na conservação de vias, portável para apps "C compiler" de smartphone.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Desenvolvimento da lógica do "algoritmo de pedreiro" para vias</li>
+        <li>Execução via console otimizada e portável para celular</li>
+        <li>Aplicação real de raciocínio de infraestrutura usando C</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Fortalecimento da lógica base resolvendo problemas tangíveis do dia a dia.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/santander-python-ia" target="_blank">
-    <div class="projeto-icon"><i class="fa-solid fa-robot"></i></div>
-    <h2 class="titulo-projeto">
-      🤖 Santander Python IA <br> Bootcamp Santander: Python e IA.
-    </h2>
+  <!-- Engenharia de Software -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/EngenhariadeSoftware" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="fa-solid fa-laptop-code" style="color: #61dafb;"></i></div>
+      <div class="projeto-title">
+        <h3>⚙️ Engenharia de Software</h3>
+        <p>Projetos acadêmicos com foco em estruturação de sistemas (Modelagem e Arquitetura).</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Levantamento de requisitos</li>
+        <li>Modelagem UML e casos de uso</li>
+        <li>Documentação técnica</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Visão estruturada de desenvolvimento e organização de sistemas.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/Python-Ciencia-de-Dados" target="_blank">
-    <div class="projeto-icon"><i class="fa-solid fa-chart-line"></i></div>
-    <h2 class="titulo-projeto">
-      📊 Ciência de Dados <br> Manipulação de dados e análises com Python.
-    </h2>
+</section>
+
+<!-- Categoria 2: APIs -->
+<div class="categoria-header reveal">
+  <h2><i class="fa-solid fa-network-wired"></i> APIs e Backend</h2>
+  <p>Desenvolvimento e integração de interfaces de programação de aplicação.</p>
+</div>
+<section class="projetos-lista">
+
+  <!-- Backend API REST -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/store_api" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="fa-solid fa-store"></i></div>
+      <div class="projeto-title">
+        <h3>🛒 Backend API REST (Node.js / Python)</h3>
+        <p>Desenvolvimento de APIs com foco em regras de negócio e integração.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Criação de endpoints RESTful</li>
+        <li>Estruturação de backend</li>
+        <li>Validação de dados e requisições</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Construção de serviços prontos para testes de API e automação.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/CrochePTC1" target="_blank">
-    <div class="projeto-icon"><i class="fa-solid fa-shirt"></i></div>
-    <h2 class="titulo-projeto">
-      🧶 Ecommerce Crochê <br> Repositório web do site Croche PTC.
-    </h2>
+</section>
+
+<!-- Categoria 3: Projetos GUI -->
+<div class="categoria-header reveal">
+  <h2><i class="fa-solid fa-desktop"></i> Sistemas com Interface</h2>
+  <p>Projetos Fullstack, Desktop e Mobile (Interface + Backend + Banco de Dados).</p>
+</div>
+<section class="projetos-lista">
+
+  <!-- SOS -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/SOS" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-qt-original colored"></i></div>
+      <div class="projeto-title">
+        <h3>🚑 Sistema Desktop com Qt (C++ / Qt Creator)</h3>
+        <p>Sistema completo com interface gráfica e integração com banco de dados.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Interface GUI interativa</li>
+        <li>Controle de usuários e autenticação</li>
+        <li>Integração com banco de dados e regras de negócio</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Desenvolvimento de aplicação completa com foco em usabilidade e validação de fluxo.
+      </div>
+    </div>
+  </a>
+
+  <!-- Ecommerce -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/CrochePTC1" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon"><i class="devicon-androidstudio-plain colored"></i></div>
+      <div class="projeto-title">
+        <h3>🧶 Mobile App Ecommerce (Android Studio / Java/Kotlin)</h3>
+        <p>Aplicação mobile para catálogo e gerenciamento de produtos.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Interface mobile responsiva</li>
+        <li>Estruturação de catálogo</li>
+        <li>Navegação e fluxo de usuário</li>
+      </ul>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Experiência em construção de aplicações mobile com foco em usabilidade.
+      </div>
+    </div>
   </a>
 
 </section>
@@ -111,7 +390,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('header, .projeto').forEach((el) => {
+document.querySelectorAll('header, .categoria-header, .projeto-detalhado').forEach((el) => {
   el.classList.add('reveal');
   observer.observe(el);
 });
