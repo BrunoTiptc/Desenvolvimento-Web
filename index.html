@@ -12,23 +12,53 @@
       min-height: 100vh;
       margin: 0;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      background: radial-gradient(circle at center, #151515, #000000);
+      justify-content: flex-start;
+      background: #000;
       font-family: 'Poppins', sans-serif;
-      padding: 20px;
+      padding: 40px 20px;
       box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    #matrix-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.15;
     }
     .entrada-container {
-      max-width: 800px;
-      text-align: center;
-      animation: fadeIn 1.2s ease-out;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 50px 40px;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin: 0 auto;
+    }
+    .glass-card, .duolingo-card {
+      background: rgba(20, 20, 30, 0.7) !important;
+      backdrop-filter: blur(15px);
+      padding: 35px !important;
+      border-radius: 24px !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      opacity: 0;
+      animation: fadeInPremium 2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    }
+    .card-1 { animation-delay: 0.3s; }
+    .card-2 { animation-delay: 0.8s; }
+    .card-3 { animation-delay: 1.3s; }
+
+    @keyframes fadeInPremium {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     .foto-perfil {
       width: 140px;
@@ -62,7 +92,7 @@
       letter-spacing: 1px;
     }
     .resumo-sobre {
-      color: #bbb;
+      color: #eeeeee;
       font-size: 1.15rem;
       line-height: 1.7;
       margin-bottom: 30px;
@@ -72,35 +102,66 @@
     }
     .botoes-container {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 35px;
+      margin-top: 30px;
+    }
+    .botoes-row {
+      display: flex;
+      gap: 15px;
+      width: 100%;
+      justify-content: center;
     }
     .btn-entrar {
-      display: inline-block;
-      padding: 14px 28px;
-      font-size: 1.05rem;
-      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: #fff;
       text-decoration: none;
-      background: linear-gradient(45deg, #0d6efd, #0dcaf0);
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+      background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(0, 0, 0, 0.3));
+      border: 1px solid rgba(13, 110, 253, 0.5);
+      border-radius: 6px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      flex: 1;
+      max-width: 250px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-entrar::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      transition: 0.6s;
+      pointer-events: none;
+    }
+    .btn-entrar:hover::after {
+      left: 120%;
     }
     .btn-entrar:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(13, 110, 253, 0.5);
+      background: rgba(13, 110, 253, 0.3);
+      border-color: #0dcaf0;
+      box-shadow: 0 0 25px rgba(13, 110, 253, 0.4);
+      transform: translateY(-3px) scale(1.02);
     }
-    .btn-secundario {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: none;
+    .btn-sobre {
+      max-width: 515px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.2);
     }
-    .btn-secundario:hover {
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    .btn-sobre:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     }
     .redes-sociais {
       display: flex;
@@ -147,6 +208,15 @@
     .botao-social i {
       font-size: 1.2rem;
     }
+    .redes-island {
+      background: rgba(20, 20, 30, 0.4);
+      backdrop-filter: blur(12px);
+      padding: 30px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(106, 90, 205, 0.2);
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
     .fa-github { color: #f0f0f0; }
     .fa-linkedin { color: #4092ff; }
     .fa-google { color: #ff6b6b; }
@@ -160,37 +230,45 @@
   </style>
 </head>
 <body class="entrada">
+  <canvas id="matrix-canvas"></canvas>
 
   <div class="entrada-container">
-    <img src="https://avatars.githubusercontent.com/u/121142325?s=400&u=1afd070b4d0633410374043700f3fc5a6f38074b&v=4" alt="Bruno César" class="foto-perfil">
-    <h1 class="titulo-entrada">Bruno César</h1>
-    <div class="cargo">QA Júnior | Engenharia de Software</div>
-    
-    <div class="resumo-sobre">
-      Engenheiro de Software em evolução e Pai do Arthur. Focado em garantir <strong>qualidade, automação e sistemas confiáveis</strong> através de ferramentas robustas, atuando com <strong>QA, Python, Java, C++ e Cloud</strong>.<br>
-      Orgulhoso membro da comunidade do <strong>Google Developer Program</strong>!
+    <!-- CAIXA 1: BIO E NAVEGAÇÃO -->
+    <div class="glass-card card-1" style="text-align: center;">
+      <img src="https://avatars.githubusercontent.com/u/121142325?s=400&u=1afd070b4d0633410374043700f3fc5a6f38074b&v=4" alt="Bruno César" class="foto-perfil">
+      <h1 class="titulo-entrada">Bruno César</h1>
+      <div class="cargo">QA Júnior | Engenharia de Software</div>
+      
+      <div class="resumo-sobre">
+        Engenheiro de Software em evolução e Pai do Arthur. Focado em garantir <strong>qualidade, automação e sistemas confiáveis</strong> através de ferramentas robustas, atuando com <strong>QA, Python, Java, C++ e Cloud</strong>.<br>
+        Orgulhoso membro da comunidade do <strong>Google Developer Program</strong>!
+      </div>
+
+      <div class="botoes-container">
+        <div class="botoes-row">
+          <a href="paginas/projetos-qa.html" class="btn-entrar" style="font-size: 1.2rem;">QA</a>
+          <a href="paginas/outros-projetos.html" class="btn-entrar">Projetos Pessoais</a>
+        </div>
+        <a href="paginas/sobre.html" class="btn-entrar btn-sobre">Sobre Mim</a>
+      </div>
     </div>
 
-
-
-    <div class="botoes-container">
-      <a href="paginas/sobre.html" class="btn-entrar btn-secundario">Sobre Mim</a>
-      <a href="paginas/projetos-qa.html" class="btn-entrar">Projetos de QA</a>
-      <a href="paginas/outros-projetos.html" class="btn-entrar btn-secundario">Projetos Pessoais</a>
+    <!-- CAIXA 2: CONTATOS -->
+    <div class="glass-card card-2" style="padding: 30px;">
+      <h2 style="font-family:'Orbitron'; color:#fff; font-size:1.5rem; margin-bottom:20px; text-align:center;">Conecte-se Comigo</h2>
+      <div class="redes-sociais" style="border-top: none; padding-top: 0;">
+        <a href="https://wa.me/5534999467838" target="_blank" class="botao-social"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp</a>
+        <a href="mailto:brunocesarti95@gmail.com" class="botao-social"><i class="fa-solid fa-envelope" style="color: #EA4335;"></i> E-mail</a>
+        <a href="https://dasnuvensblog.blogspot.com" target="_blank" class="botao-social"><i class="fa-solid fa-cloud"></i> Meu Blog</a>
+        <a href="https://github.com/BrunoTiptc" target="_blank" class="botao-social"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/bruno-césar-0b54091b0" target="_blank" class="botao-social"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://g.dev/brunoti" target="_blank" class="botao-social"><i class="fa-brands fa-google"></i> Google Dev</a>
+        <a href="https://www.credly.com/users/bruno-cesar-alves/badges#credly" target="_blank" class="botao-social"><i class="fa-solid fa-award"></i> Credly M.</a>
+      </div>
     </div>
 
-    <div class="redes-sociais">
-      <a href="https://wa.me/5534999467838" target="_blank" class="botao-social"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp</a>
-      <a href="mailto:brunocesarti95@gmail.com" class="botao-social"><i class="fa-solid fa-envelope" style="color: #EA4335;"></i> E-mail</a>
-      <a href="https://dasnuvensblog.blogspot.com" target="_blank" class="botao-social"><i class="fa-solid fa-cloud"></i> Meu Blog</a>
-      <a href="https://github.com/BrunoTiptc" target="_blank" class="botao-social"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/bruno-césar-0b54091b0" target="_blank" class="botao-social"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="https://g.dev/brunoti" target="_blank" class="botao-social"><i class="fa-brands fa-google"></i> Google Developer</a>
-      <a href="https://www.credly.com/users/bruno-cesar-alves/badges#credly" target="_blank" class="botao-social"><i class="fa-solid fa-award"></i> Credly M.</a>
-    </div>
-
-    <!-- DUOLINGO CARD MOVIDO PARA O FINAL -->
-    <section class="duolingo-card" style="margin-top: 35px; margin-bottom: 0;">
+    <!-- CAIXA 3: DUOLINGO -->
+    <section class="duolingo-card card-3" style="margin: 0; width: 100%;">
       <div class="duo-header">
         <div class="duo-logo">
           <span style="font-size: 50px; line-height: 1; filter: drop-shadow(0 0 5px rgba(88,204,2,0.3));" title="Duo">🦉</span>
@@ -202,18 +280,18 @@
       <div class="duo-level-card">
          <div class="level-info">
             <span class="level-title">Idioma : Inglês US</span>
-            <span class="level-badge">Nível 30</span>
+            <span class="level-badge" id="duo-level">Carregando...</span>
          </div>
       </div>
 
       <div class="duo-stats">
         <div class="duo-stat">
            <span class="stat-icon">🔥</span>
-           <span class="stat-value"><strong id="duo-streak">339</strong> Ofensiva</span>
+           <span class="stat-value"><strong id="duo-streak">--</strong> Ofensiva</span>
         </div>
         <div class="duo-stat">
            <span class="stat-icon">⚡</span>
-           <span class="stat-value"><strong id="duo-xp">64.252</strong> XP Total</span>
+           <span class="stat-value"><strong id="duo-xp">--</strong> XP Total</span>
         </div>
       </div>
       
@@ -233,12 +311,46 @@
           const user = data.users[0];
           document.getElementById('duo-streak').innerText = user.streak;
           document.getElementById('duo-xp').innerText = user.totalXp.toLocaleString('pt-BR');
+          
+          const englishCourse = user.courses.find(c => (c.learningLanguage || c.learning_language) === 'en');
+          if (englishCourse) {
+            const level = englishCourse.level || Math.floor(englishCourse.xp / 2000);
+            document.getElementById('duo-level').innerText = 'Nível ' + level;
+          }
         }
       } catch(e) {
         console.error('Falha ao buscar dados do Duolingo', e);
       }
     }
     fetchDuolingoData();
+
+    // EFEITO MATRIX BACKGROUND (BINÁRIO)
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const characters = '01'; // Apenas binário
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#0f0';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 80); // Mais lento (80ms)
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
   </script>
 
 </body>

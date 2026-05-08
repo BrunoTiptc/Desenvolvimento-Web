@@ -1,141 +1,315 @@
-<!DOCTYPE html><html lang="pt-br"><head>
-<meta charset="UTF-8"><title>Portfólio | Bruno César</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="../css/estilo.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
-</head><body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio QA | Bruno César</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .categoria-header {
+      text-align: center;
+      margin: 60px auto 20px auto;
+      max-width: 900px;
+      padding: 15px 20px;
+      background: linear-gradient(90deg, transparent, rgba(13, 202, 240, 0.05), transparent);
+      border-bottom: 2px solid rgba(13, 202, 240, 0.2);
+      border-radius: 10px;
+    }
+    .categoria-header h2 {
+      font-size: 2rem;
+      margin: 0 0 10px 0;
+      color: #0dcaf0;
+      text-shadow: 0 0 12px rgba(13, 202, 240, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    .categoria-header p {
+      color: #a0a0a0;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .projetos-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .projeto-detalhado {
+      background: rgba(20, 20, 30, 0.55);
+      border: 1px solid rgba(106, 90, 205, 0.3);
+      border-radius: 16px;
+      padding: 25px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .projeto-detalhado:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(13, 202, 240, 0.25);
+      border-color: #0dcaf0;
+    }
+    .projeto-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 15px;
+    }
+    .projeto-icon {
+      min-width: 85px;
+      height: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(13, 202, 240, 0.2);
+    }
+    .projeto-icon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .projeto-title h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      font-size: 1.35rem;
+      margin: 0 0 6px 0;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+    .projeto-title p {
+      margin: 0;
+      color: #bbb;
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+    .projeto-body {
+      padding-top: 5px;
+    }
+    .projeto-body ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #dcdce4;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .projeto-body li {
+      margin-bottom: 6px;
+    }
+    .projeto-impacto {
+      margin-top: 10px;
+      background: linear-gradient(90deg, rgba(13, 202, 240, 0.1), transparent);
+      border-left: 4px solid #0dcaf0;
+      padding: 12px 18px;
+      border-radius: 4px;
+      color: #f0f0f0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .projeto-impacto strong {
+      color: #0dcaf0;
+      font-weight: 600;
+    }
+    
+    @media(max-width: 600px) {
+      .projeto-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .projeto-icon {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
 
 <header id="id">
   <div style="margin-bottom: 15px;">
     <a href="../index.html" class="botao-social" style="background:rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
   </div>
-  <a href="https://dasnuvensblog.blogspot.com" target="_blank" class="botao-social" style="margin-bottom: 15px;"><i class="fa-solid fa-cloud"></i> Meu Blog: Das Nuvens</a>
-  <p>QA Júnior | Testes Manuais e Automatizados | Web & API <br><br> Foco em qualidade de software, automação de testes, validação de APIs e boas práticas de QA aplicadas a projetos reais.</p>
-  <div class="links-sociais">
-    <a href="https://github.com/BrunoTiptc" target="_blank" class="botao-social"><i class="fa-brands fa-github"></i> GitHub</a>
-    <a href="https://www.linkedin.com/in/bruno-césar-0b54091b0" target="_blank" class="botao-social"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-    <a href="https://g.dev/brunoti" target="_blank" class="botao-social"><i class="fa-brands fa-google"></i> Google Dev</a>
-    <a href="https://www.credly.com/users/bruno-cesar-alves/badges#credly" target="_blank" class="botao-social"><i class="fa-solid fa-award"></i> Credly</a>
-  </div>
+  <h1 style="font-size: 2.2rem; color: #fff; margin-bottom: 10px;">Portfólio de QA</h1>
+  <p style="color: #0dcaf0; font-weight: 500;">Garantia de Qualidade | Automação | Testes de API & UI</p>
 </header>
 
-<section class="projetos-container">
+<div class="categoria-header reveal">
+  <h2><i class="fa-solid fa-microscope"></i> Projetos de Automação</h2>
+  <p>Foco em reduzir riscos e acelerar ciclos de entrega com testes robustos.</p>
+</div>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/ia-qa-lab" target="_blank">
-    <img src="../imagens/IA QA LAB .png">
-    <h2 class="titulo-projeto">
-      🧠 IA QA Lab | Python · QA aplicado à IA  
-      <br>
-      Testes funcionais, performance e carga em modelos de linguagem.  
-      Runner de QA com logs, rastreabilidade e análise de coerência textual.
-    </h2>
+<section class="projetos-lista">
+
+  <!-- IA QA LAB -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/ia-qa-lab" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon">
+        <img src="../imagens/IA QA LAB .png" class="projeto-icon-img">
+      </div>
+      <div class="projeto-title">
+        <h3>🧠 IA QA Lab | Python & IA</h3>
+        <p>QA aplicado à validação de modelos de linguagem e IA.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Testes funcionais e performance em LLMs</li>
+        <li>Runner de QA com geração de logs e rastreabilidade</li>
+        <li>Análise automatizada de coerência textual</li>
+      </ul>
+      <div class="projeto-badges">
+        <span class="badge">IA Validation</span>
+        <span class="badge">High Load</span>
+        <span class="badge">Python Runner</span>
+      </div>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Garantia de confiabilidade em sistemas baseados em inteligência artificial.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/optimus-robot" target="_blank">
-    <img src="../imagens/Optimus robot.png">
-    <h2 class="titulo-projeto">
-      🤖 Optimus-Robot | Python · IA · QA  
-      <br>
-      Sistema distribuído com mensageria assíncrona, foco em testes, validação de fluxos e confiabilidade.
-    </h2>
+  <!-- Optimus Robot -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/optimus-robot" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon">
+        <img src="../imagens/Optimus robot.png" class="projeto-icon-img">
+      </div>
+      <div class="projeto-title">
+        <h3>🤖 Optimus-Robot | Python & IA</h3>
+        <p>Sistema distribuído com foco em validação de fluxos complexos.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Integração com mensageria assíncrona</li>
+        <li>Validação de fluxos de ponta a ponta</li>
+        <li>Foco em escalabilidade e robustez de testes</li>
+      </ul>
+      <div class="projeto-badges">
+        <span class="badge">Async Flows</span>
+        <span class="badge">Distributed</span>
+        <span class="badge">Reliability</span>
+      </div>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Arquitetura distribuída testável e resiliente a falhas.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/kanban-cypress-tests" target="_blank">
-    <img src="../imagens/Cypress e2e.png">
-    <h2 class="titulo-projeto">
-      🧪 QA & Automação | Cypress · E2E  
-      <br>
-      Automação de testes end-to-end em aplicação Kanban, cobrindo fluxos críticos e regressão.
-    </h2>
+  <!-- Kanban Cypress -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/kanban-cypress-tests" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon">
+        <img src="../imagens/Cypress e2e.png" class="projeto-icon-img">
+      </div>
+      <div class="projeto-title">
+        <h3>🧪 QA & Automação | Cypress E2E</h3>
+        <p>Testes end-to-end em aplicação de gerenciamento Kanban.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Automação de fluxos críticos de usuário</li>
+        <li>Testes de regressão automatizados</li>
+        <li>Configuração de CI/CD para execução de testes</li>
+      </ul>
+      <div class="projeto-badges">
+        <span class="badge">Cypress</span>
+        <span class="badge">E2E Testing</span>
+        <span class="badge">CI/CD</span>
+      </div>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Redução drástica de bugs em produção através de regressão contínua.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/QA-automacao" target="_blank">
-    <img src="../imagens/QA e automacao.png">
-    <h2 class="titulo-projeto">
-      🧪 QA & Automação de Testes | Selenium · PyTest · Postman  
-      <br>
-      Testes de API, UI e automação com mindset QA, versionamento e boas práticas.
-    </h2>
+  <!-- QA Automacao -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/QA-automacao" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon">
+        <img src="../imagens/QA e automacao.png" class="projeto-icon-img">
+      </div>
+      <div class="projeto-title">
+        <h3>🧪 Automação | Selenium & PyTest</h3>
+        <p>Framework completo de testes de UI e API.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Testes de interface web com Selenium</li>
+        <li>Validação de APIs REST com PyTest e Postman</li>
+        <li>Mindset QA focado em cobertura e boas práticas</li>
+      </ul>
+      <div class="projeto-badges">
+        <span class="badge">Selenium</span>
+        <span class="badge">PyTest</span>
+        <span class="badge">Postman</span>
+      </div>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Padronização de testes e aceleração da validação de releases.
+      </div>
+    </div>
   </a>
 
-  <a class="projeto" href="https://github.com/BrunoTiptc/bughunter" target="_blank">
-    <img src="../imagens/bughunter.png">
-    <h2 class="titulo-projeto">
-      🐞 Bughunter | React · Flask · QA  
-      <br>
-      Aplicação focada em rastreio de bugs, testes automatizados e workflows de qualidade.
-    </h2>
-  </a>
-
-  <a class="projeto" href="https://github.com/BrunoTiptc/backend_python" target="_blank">
-    <img src="../imagens/backend.png">
-    <h2 class="titulo-projeto">
-      📦 Backend Python | FastAPI · APIs REST  
-      <br>
-      Desenvolvimento de APIs com foco em lógica, versionamento e base para testes automatizados.
-    </h2>
+  <!-- Bughunter -->
+  <a class="projeto-detalhado reveal" href="https://github.com/BrunoTiptc/bughunter" target="_blank">
+    <div class="projeto-header">
+      <div class="projeto-icon">
+        <img src="../imagens/bughunter.png" class="projeto-icon-img">
+      </div>
+      <div class="projeto-title">
+        <h3>🐞 Bughunter | React & Flask</h3>
+        <p>Aplicação dedicada ao rastreio de bugs e workflows de qualidade.</p>
+      </div>
+    </div>
+    <div class="projeto-body">
+      <ul>
+        <li>Rastreamento e gerenciamento de falhas</li>
+        <li>Workflows de validação integrados</li>
+        <li>Interface amigável para report de bugs</li>
+      </ul>
+      <div class="projeto-badges">
+        <span class="badge">Bug Tracking</span>
+        <span class="badge">QA Workflow</span>
+        <span class="badge">Fullstack</span>
+      </div>
+      <div class="projeto-impacto">
+        <strong>Impacto:</strong> Melhoria na comunicação entre desenvolvedores e time de QA.
+      </div>
+    </div>
   </a>
 
 </section>
 
-
 <section class="tecnologias">
-  <h2>Tecnologias de QA e Automação</h2>
-
+  <h2>Stack de Qualidade</h2>
   <div class="tecnologias-grid">
-    <div class="tech">
-      <i class="devicon-playwright-plain"></i> Playwright
-    </div>
-
-    <div class="tech">
-      <i class="devicon-java-plain"></i> Java
-    </div>
-
-    <div class="tech">
-      <i class="devicon-python-plain"></i> Python
-    </div>
-
-    <div class="tech">
-      <i class="devicon-nodejs-plain"></i> Node JS
-    </div>
-
-    <div class="tech">
-      <i class="devicon-react-original"></i> React
-    </div>
-
-    <div class="tech">
-      <i class="devicon-docker-plain"></i> Docker
-    </div>
-
-    <div class="tech">
-      <i class="devicon-cypressio-plain"></i> Cypress
-    </div>
-
-    <div class="tech">
-      <i class="devicon-selenium-original"></i> Selenium
-    </div>
-
-    <div class="tech">
-      <i class="devicon-postman-plain"></i> Postman
-    </div>
-    
-    <div class="tech">
-      <i class="devicon-git-plain"></i> Git
-    </div>
-
-    <div class="tech">
-      <i class="devicon-googlecloud-plain"></i> Google Cloud
-    </div>
+    <div class="tech"><i class="devicon-playwright-plain colored"></i> Playwright</div>
+    <div class="tech"><i class="devicon-cypressio-plain colored"></i> Cypress</div>
+    <div class="tech"><i class="devicon-selenium-original colored"></i> Selenium</div>
+    <div class="tech"><i class="devicon-python-plain colored"></i> Python</div>
+    <div class="tech"><i class="devicon-java-plain colored"></i> Java</div>
+    <div class="tech"><i class="devicon-docker-plain colored"></i> Docker</div>
+    <div class="tech"><i class="devicon-postman-plain colored"></i> Postman</div>
+    <div class="tech"><i class="devicon-git-plain colored"></i> Git</div>
   </div>
 </section>
 
-
-
 <script>
-document.querySelectorAll(".video-projeto").forEach(v=>{v.onmouseenter=()=>v.play();v.onmouseleave=()=>{v.pause();v.currentTime=0;}});
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if(entry.isIntersecting) {
@@ -144,9 +318,10 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('header, section h2, .sobre-mim p, .projeto, .tech, .timeline-item').forEach((el) => {
-  el.classList.add('reveal');
+document.querySelectorAll('.reveal').forEach((el) => {
   observer.observe(el);
 });
 </script>
-</body></html>
+
+</body>
+</html>
