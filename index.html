@@ -6,6 +6,7 @@
   <title>Bem-vindo | Bruno César</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="css/duolingo.css">
   <style>
     body.entrada, html.entrada {
@@ -227,6 +228,232 @@
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
+    /* Status Badge */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(25, 135, 84, 0.15);
+      border: 1px solid rgba(25, 135, 84, 0.4);
+      color: #198754;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 15px rgba(25, 135, 84, 0.2);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #25d366;
+      border-radius: 50%;
+      animation: pulse-green 1.5s infinite;
+    }
+    @keyframes pulse-green {
+      0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Metricas Grid */
+    .metricas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+      margin-top: 15px;
+    }
+    .metric-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .metric-card:hover {
+      background: rgba(13, 110, 253, 0.05);
+      border-color: rgba(13, 110, 253, 0.3);
+      transform: translateY(-2px);
+    }
+    .metric-val {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0dcaf0;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .metric-lbl {
+      font-size: 0.8rem;
+      color: #bbb;
+      line-height: 1.2;
+      display: block;
+    }
+
+    /* Badges */
+    .tech-badges-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tech-badge {
+      background: rgba(13, 202, 240, 0.1);
+      border: 1px solid rgba(13, 202, 240, 0.25);
+      color: #0dcaf0;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tech-badge:hover {
+      background: rgba(13, 202, 240, 0.25);
+      border-color: #0dcaf0;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(13, 202, 240, 0.25);
+    }
+
+    /* Giant Card Destaque */
+    .projeto-destaque {
+      border: 1px solid rgba(13, 202, 240, 0.4) !important;
+      background: linear-gradient(135deg, rgba(20, 20, 35, 0.85), rgba(13, 110, 253, 0.08)) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .projeto-destaque-header {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .projeto-destaque-badge {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0dcaf0;
+      background: rgba(13, 202, 240, 0.15);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(13, 202, 240, 0.3);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .projeto-destaque-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    .projeto-destaque-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccc;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    /* Pipeline */
+    .pipeline-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 25px auto 15px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      border: 1px solid rgba(25, 135, 84, 0.2);
+      max-width: 500px;
+      position: relative;
+    }
+    .pipeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+    }
+    .pipeline-node {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #198754;
+      border: 3px solid rgba(25, 135, 84, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      box-shadow: 0 0 15px rgba(25, 135, 84, 0.8);
+      position: relative;
+    }
+    .pipeline-line {
+      height: 4px;
+      background: #198754;
+      flex-grow: 1;
+      margin: 0 -5px;
+      margin-top: -26px;
+      z-index: 1;
+      box-shadow: 0 0 8px rgba(25, 135, 84, 0.5);
+    }
+    .pipeline-step span {
+      font-size: 0.75rem;
+      color: #aaa;
+      font-weight: 500;
+    }
+
+    /* Home Timeline */
+    .timeline-home {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      padding-left: 20px;
+      border-left: 2px solid rgba(13, 202, 240, 0.3);
+      margin-left: 10px;
+      text-align: left;
+      margin-top: 25px;
+    }
+    .timeline-home-item {
+      position: relative;
+    }
+    .timeline-home-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #0dcaf0;
+      border: 2px solid #000;
+      box-shadow: 0 0 8px rgba(13, 202, 240, 0.8);
+    }
+    .timeline-home-year {
+      font-family: 'Orbitron', sans-serif;
+      color: #0dcaf0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+    .timeline-home-text {
+      color: #eee;
+      font-size: 0.95rem;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body class="entrada">
@@ -235,6 +462,13 @@
   <div class="entrada-container">
     <!-- CAIXA 1: BIO E NAVEGAÇÃO -->
     <div class="glass-card card-1" style="text-align: center;">
+      <!-- TOP STATUS BADGE -->
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Disponível para oportunidades em QA, Testes e Desenvolvimento
+      </div>
+      <br>
+
       <img src="https://avatars.githubusercontent.com/u/121142325?s=400&u=1afd070b4d0633410374043700f3fc5a6f38074b&v=4" alt="Bruno César" class="foto-perfil">
       <h1 class="titulo-entrada">Bruno César</h1>
       <div class="cargo">QA Júnior | Engenharia de Software</div>
@@ -244,17 +478,156 @@
         Orgulhoso membro da comunidade do <strong>Google Developer Program</strong>!
       </div>
 
+      <!-- NUMBERS -->
+      <div class="metricas-grid">
+        <div class="metric-card">
+          <span class="metric-val">+20</span>
+          <span class="metric-lbl">Projetos</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-val">+300</span>
+          <span class="metric-lbl">Commits</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-val">GDP</span>
+          <span class="metric-lbl">Google Dev Program</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-val">Último Ano</span>
+          <span class="metric-lbl">Engenharia de Software</span>
+        </div>
+      </div>
+
+      <!-- BOTÕES MELHORADOS -->
       <div class="botoes-container">
         <div class="botoes-row">
-          <a href="paginas/projetos-qa.html" class="btn-entrar" style="font-size: 1.2rem;">QA</a>
-          <a href="paginas/outros-projetos.html" class="btn-entrar">Projetos Pessoais</a>
+          <a href="paginas/projetos-qa.html" class="btn-entrar" style="font-size: 1.1rem; border-color: #0dcaf0;">QA Portfolio</a>
+          <a href="paginas/outros-projetos.html" class="btn-entrar">Projetos</a>
         </div>
-        <a href="paginas/sobre.html" class="btn-entrar btn-sobre">Sobre Mim</a>
+        <div class="botoes-row">
+          <a href="#stack-section" class="btn-entrar btn-sobre">Tecnologias</a>
+          <a href="paginas/sobre.html" class="btn-entrar btn-sobre">Sobre Mim</a>
+        </div>
+        <a href="#contatos-section" class="btn-entrar btn-sobre" style="max-width: 515px; width: 100%;">Contato</a>
+      </div>
+    </div>
+
+    <!-- CAIXA NOVA: STACK DE TECNOLOGIAS -->
+    <div id="stack-section" class="glass-card card-2" style="text-align: center;">
+      <h2 style="font-family:'Orbitron'; color:#fff; font-size:1.5rem; margin-bottom:10px;">Stack & Tecnologias</h2>
+      <p style="color: #bbb; font-size: 0.95rem;">Habilidades técnicas em desenvolvimento, testes e infraestrutura:</p>
+      
+      <div class="tech-badges-grid">
+        <span class="tech-badge"><i class="devicon-playwright-plain colored"></i> Playwright</span>
+        <span class="tech-badge"><i class="devicon-python-plain colored"></i> Python</span>
+        <span class="tech-badge"><i class="devicon-pytest-plain colored"></i> PyTest</span>
+        <span class="tech-badge"><i class="fa-solid fa-bug" style="color: #ff6b6b;"></i> QA & Testes</span>
+        <span class="tech-badge"><i class="devicon-postman-plain colored"></i> Postman</span>
+        <span class="tech-badge"><i class="fa-solid fa-code" style="color: #0dcaf0;"></i> Swagger</span>
+        <span class="tech-badge"><i class="devicon-selenium-original colored"></i> Selenium</span>
+        <span class="tech-badge"><i class="devicon-githubactions-plain colored"></i> GitHub Actions</span>
+        <span class="tech-badge"><i class="devicon-docker-plain colored"></i> Docker</span>
+        <span class="tech-badge"><i class="devicon-java-plain colored"></i> Java</span>
+        <span class="tech-badge"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+        <span class="tech-badge"><i class="devicon-googlecloud-plain colored"></i> Google Cloud</span>
+      </div>
+    </div>
+
+    <!-- CAIXA NOVA: PROJETO DESTAQUE -->
+    <div class="glass-card projeto-destaque card-2" style="padding: 30px;">
+      <div class="projeto-destaque-header">
+        <span class="projeto-destaque-badge">Projeto Destaque</span>
+        <h2 style="font-family:'Orbitron'; color:#fff; font-size:1.8rem; margin: 5px 0;">🤖 Optimus Robot</h2>
+        <p style="color: #0dcaf0; font-size: 0.95rem; line-height: 1.4; max-width: 550px; margin: 10px auto;">
+          Automação & front-end holográfico em 3D integrado com FastAPI, Firebase, mensageria Redis e inteligência cognitiva IBM Watson.
+        </p>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 12px; text-align: left; margin: 0 auto; max-width: 550px;">
+          <div style="color: #ddd; font-size: 0.95rem;"><i class="fa-solid fa-check-double" style="color: #0dcaf0; margin-right: 8px;"></i> <strong>playwright</strong> — Automação E2E de alto desempenho</div>
+          <div style="color: #ddd; font-size: 0.95rem;"><i class="fa-solid fa-check-double" style="color: #0dcaf0; margin-right: 8px;"></i> <strong>Automação & Testes Unitários</strong> — Cobertura e consistência garantidas</div>
+          <div style="color: #ddd; font-size: 0.95rem;"><i class="fa-solid fa-check-double" style="color: #0dcaf0; margin-right: 8px;"></i> <strong>Git Flow</strong> — Versionamento e ramificação organizados</div>
+          <div style="color: #ddd; font-size: 0.95rem;"><i class="fa-solid fa-check-double" style="color: #0dcaf0; margin-right: 8px;"></i> <strong>Cloud & Integração Firebase</strong> — Banco de dados em tempo real e serviços em nuvem</div>
+          <div style="color: #ddd; font-size: 0.95rem;"><i class="fa-solid fa-check-double" style="color: #0dcaf0; margin-right: 8px;"></i> <strong>API Test Postman</strong> — Cobertura completa de testes de integração e endpoints</div>
+        </div>
+      </div>
+
+      <div class="projeto-destaque-tags">
+        <span class="projeto-destaque-tag">Three.js 3D</span>
+        <span class="projeto-destaque-tag">FastAPI</span>
+        <span class="projeto-destaque-tag">Firebase</span>
+        <span class="projeto-destaque-tag">Redis</span>
+        <span class="projeto-destaque-tag">IBM Watson</span>
+      </div>
+
+      <div style="display: flex; gap: 15px; justify-content: center; margin-top: 25px;">
+        <a href="https://github.com/BrunoTiptc/optimus-robot" target="_blank" class="btn-entrar" style="max-width: 180px;">Ver Projeto</a>
+        <a href="https://github.com/BrunoTiptc/optimus-robot" target="_blank" class="btn-entrar btn-sobre" style="max-width: 180px;">Ver Código</a>
+      </div>
+    </div>
+
+    <!-- CAIXA NOVA: DEVOPS & CI/CD -->
+    <div class="glass-card card-2" style="text-align: center;">
+      <h2 style="font-family:'Orbitron'; color:#fff; font-size:1.5rem; margin-bottom:10px;">DevOps & CI/CD</h2>
+      <p style="color: #bbb; font-size: 0.95rem; max-width: 500px; margin: 0 auto;">
+        Configuração e gerenciamento de pipelines eficientes automatizando o processo de Build, Testes e Deploy para releases rápidos.
+      </p>
+
+      <!-- GREEN PIPELINE GRAPHICAL INTERACTIVE VISUAL -->
+      <div class="pipeline-container">
+        <div class="pipeline-step">
+          <div class="pipeline-node" style="background: #198754; box-shadow: 0 0 15px rgba(25, 135, 84, 0.8);"><i class="devicon-githubactions-plain"></i></div>
+          <span>Build Passing</span>
+        </div>
+        <div class="pipeline-line" style="background: #198754;"></div>
+        <div class="pipeline-step">
+          <div class="pipeline-node" style="background: #198754; box-shadow: 0 0 15px rgba(25, 135, 84, 0.8);"><i class="fa-solid fa-vial"></i></div>
+          <span>Testes OK</span>
+        </div>
+        <div class="pipeline-line" style="background: #198754;"></div>
+        <div class="pipeline-step">
+          <div class="pipeline-node" style="background: #198754; box-shadow: 0 0 15px rgba(25, 135, 84, 0.8);"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <span>Deploy Successful</span>
+        </div>
+      </div>
+      
+      <p style="font-size: 0.85rem; color: #198754; font-weight: 600; margin-top: 5px;">
+        <i class="fa-solid fa-circle-check"></i> Pipeline Principal: 100% Verde (GitHub Actions)
+      </p>
+    </div>
+
+    <!-- CAIXA NOVA: TIMELINE JORNADA -->
+    <div class="glass-card card-2">
+      <h2 style="font-family:'Orbitron'; color:#fff; font-size:1.5rem; margin-bottom:10px; text-align: center;">Minha Jornada</h2>
+      <p style="color: #bbb; font-size: 0.95rem; text-align: center;">A evolução contínua da minha trajetória técnica:</p>
+      
+      <div class="timeline-home">
+        <div class="timeline-home-item">
+          <div class="timeline-home-year">2023</div>
+          <div class="timeline-home-text">Retorno aos estudos focados e estruturados em tecnologia.</div>
+        </div>
+        <div class="timeline-home-item">
+          <div class="timeline-home-year">2024</div>
+          <div class="timeline-home-text">Ingresso e desenvolvimento acadêmico em Engenharia de Software.</div>
+        </div>
+        <div class="timeline-home-item">
+          <div class="timeline-home-year">2025</div>
+          <div class="timeline-home-text">Especialização em metodologias de QA, testes automatizados e Cloud.</div>
+        </div>
+        <div class="timeline-home-item">
+          <div class="timeline-home-year">2026</div>
+          <div class="timeline-home-text">Projetos de Hackathon do Google e implantações avançadas de Automação.</div>
+        </div>
+        <div class="timeline-home-item">
+          <div class="timeline-home-year">2026</div>
+          <div class="timeline-home-text">Primeira oportunidade Tech profissional: TI Suporte & Hardware Físico.</div>
+        </div>
       </div>
     </div>
 
     <!-- CAIXA 2: CONTATOS -->
-    <div class="glass-card card-2" style="padding: 30px;">
+    <div id="contatos-section" class="glass-card card-2" style="padding: 30px;">
       <h2 style="font-family:'Orbitron'; color:#fff; font-size:1.5rem; margin-bottom:20px; text-align:center;">Conecte-se Comigo</h2>
       <div class="redes-sociais" style="border-top: none; padding-top: 0;">
         <a href="https://wa.me/5534999467838" target="_blank" class="botao-social"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp</a>

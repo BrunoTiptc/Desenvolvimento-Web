@@ -133,6 +133,56 @@
       .projeto-icon {
         margin-bottom: 10px;
       }
+      .especialidades-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Especialidades de QA */
+    .especialidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 20px auto 40px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .especialidade-card {
+      background: rgba(20, 20, 30, 0.55);
+      border: 1px solid rgba(13, 202, 240, 0.2);
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .especialidade-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(13, 202, 240, 0.25);
+      border-color: #0dcaf0;
+    }
+    .esp-icon {
+      font-size: 2.2rem;
+      color: #0dcaf0;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 5px rgba(13, 202, 240, 0.3));
+    }
+    .especialidade-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 10px 0;
+    }
+    .especialidade-card p {
+      color: #ccc;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
     }
   </style>
 </head>
@@ -145,6 +195,49 @@
   <h1 style="font-size: 2.2rem; color: #fff; margin-bottom: 10px;">Portfólio de QA</h1>
   <p style="color: #0dcaf0; font-weight: 500;">Garantia de Qualidade | Automação | Testes de API & UI</p>
 </header>
+
+<div class="categoria-header reveal">
+  <h2><i class="fa-solid fa-clipboard-list"></i> Especialidades & Disciplinas</h2>
+  <p>Conhecimentos teóricos e práticos aplicados no ciclo de desenvolvimento:</p>
+</div>
+
+<section class="especialidades-grid reveal">
+  <div class="especialidade-card">
+    <div class="esp-icon"><i class="fa-solid fa-fire-burner"></i></div>
+    <h3>Smoke Test</h3>
+    <p>Validação ágil e imediata das principais funcionalidades a cada deploy para assegurar estabilidade básica do build.</p>
+  </div>
+  <div class="especialidade-card">
+    <div class="esp-icon"><i class="fa-solid fa-check-to-slot"></i></div>
+    <h3>Teste Funcional</h3>
+    <p>Verificação criteriosa de requisitos de negócio, fluxos de usuário e usabilidade na perspectiva do cliente final.</p>
+  </div>
+  <div class="especialidade-card">
+    <div class="esp-icon"><i class="fa-solid fa-network-wired"></i></div>
+    <h3>API Testing</h3>
+    <p>Validação de endpoints REST, payloads, status code, integridade de dados e desempenho das integrações com Postman.</p>
+  </div>
+  <div class="especialidade-card">
+    <div class="esp-icon"><i class="fa-solid fa-robot"></i></div>
+    <h3>Testes Automatizados</h3>
+    <p>Desenvolvimento e execução de scripts de teste E2E utilizando frameworks como Playwright, Cypress e Selenium.</p>
+  </div>
+  <div class="especialidade-card">
+    <div class="esp-icon"><i class="fa-solid fa-file-invoice"></i></div>
+    <h3>Casos de Teste</h3>
+    <p>Planejamento estratégico de cenários, documentação estruturada de passos de execução e resultados esperados.</p>
+  </div>
+  <div class="especialidade-card">
+    <div class="esp-icon"><i class="fa-solid fa-square-poll-vertical"></i></div>
+    <h3>Relatórios</h3>
+    <p>Acompanhamento de cobertura de testes, métricas de qualidade e geração de logs detalhados de automação.</p>
+  </div>
+  <div class="especialidade-card" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto;">
+    <div class="esp-icon"><i class="fa-solid fa-bug"></i></div>
+    <h3>Bugs Encontrados</h3>
+    <p>Rastreamento estruturado de falhas, triagem, relatórios descritivos detalhados com reprodutibilidade clara.</p>
+  </div>
+</section>
 
 <div class="categoria-header reveal">
   <h2><i class="fa-solid fa-microscope"></i> Projetos de Automação</h2>
