@@ -18,32 +18,92 @@
 </header>
 
 <section id="sobre" class="sobre-mim"><h2>Sobre Mim</h2>
-<p>👋 Olá! Sou o Bruno. Minha jornada na tecnologia não seguiu o caminho comum. Durante anos, trabalhei na área de manufatura industrial. Mas decidi mudar meu rumo: voltei a estudar, entrei na faculdade de Engenharia de Software e decidi construir meu espaço no mundo tech.</p>
-<p>Hoje, orgulhosamente sou o pai do Arthur e atuo como TI de Suporte físico na empresa, lidando no dia a dia com a manutenção de computadores, impressoras e rede — o suporte "raiz" que me dá uma base incrível de infraestrutura e hardware. Ao mesmo tempo, dedico cada momento livre aos estudos avançados de QA (Quality Assurance), Automação de Testes, Cloud e Inteligência Artificial.</p>
-<p>Acredito que meu histórico na manufatura me deu uma disciplina rigorosa, atenção extrema aos detalhes e foco total em processos eficientes — habilidades que hoje aplico diretamente na escrita de casos de teste, automação com Cypress/Playwright e gerenciamento de infraestrutura em nuvem no Google Cloud. Sou membro oficial do Google Developer Program e busco evoluir como QA Engineer / Software Engineer focado em entregar sistemas impecáveis.</p>
+<p>👋 Olá! Sou o Bruno. Minha jornada na tecnologia não seguiu o caminho comum. Durante anos, trabalhei na área de manufatura industrial. Decidi mudar meu rumo: voltei a estudar, entrei na faculdade de Engenharia de Software e venho construindo meu espaço com foco em Inteligência Artificial Generativa e Desenvolvimento Full Stack.</p>
+<p>Hoje, orgulhosamente sou pai do Arthur e atuo no suporte técnico físico de TI, lidando com manutenção de computadores, impressoras e infraestrutura de rede — o suporte "raiz" que me dá uma base prática excelente de hardware. Ao mesmo tempo, dedico cada momento livre à construção de sistemas de IA, aplicações web completas e automação de testes.</p>
+<p>Acredito que meu histórico industrial me deu uma disciplina rigorosa, atenção extrema a processos e foco em soluções que funcionem de verdade de ponta a ponta. Sou membro da comunidade do <strong>Google Developer Program</strong> e busco criar sistemas inteligentes, performáticos e confiáveis.</p>
 </section>
 
 <section class="timeline"><h2>Minha Jornada</h2><div class="timeline-container">
-  <div class="timeline-item"><div class="timeline-year">2023</div><h3>Retorno aos Estudos</h3><p>Recomeço focado em desenvolvimento web, lógica de programação e infraestrutura física de computadores (SENAC MG).</p></div>
-  <div class="timeline-item"><div class="timeline-year">2024</div><h3>Engenharia de Software</h3><p>Ingresso na UNICESUMAR e mergulho teórico/prático em banco de dados, estrutura de dados, QA e desenvolvimento de software.</p></div>
-  <div class="timeline-item"><div class="timeline-year">2025</div><h3>QA e Cloud</h3><p>Especialização prática em testes automatizados (Cypress, Playwright, Selenium), Google Cloud Skills Boost e Inteligência Artificial.</p></div>
-  <div class="timeline-item"><div class="timeline-year">2026</div><h3>Hackathon Google & Automação</h3><p>Criação de projetos inovadores e complexos de automação e validação utilizando IA.</p></div>
-  <div class="timeline-item"><div class="timeline-year">2026</div><h3>Primeira Oportunidade Tech</h3><p>Inserção no mercado como Suporte de TI & Hardware Físico, atuando com manutenção de redes, computadores e infraestrutura corporativa.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2023</div><h3>Retorno aos Estudos</h3><p>Recomeço focado em desenvolvimento web, lógica de programação e infraestrutura física de TI (SENAC MG).</p></div>
+  <div class="timeline-item"><div class="timeline-year">2024</div><h3>Engenharia de Software</h3><p>Ingresso na UNICESUMAR e aprofundamento em arquitetura de software, bancos de dados e desenvolvimento full stack.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2025</div><h3>QA & Fundamentos de Cloud/Dados</h3><p>Especialização em testes automatizados (Playwright, PyTest), análise de dados e fundamentos de arquitetura em nuvem no Google Cloud.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2026</div><h3>IA Generativa & Automação Avançada</h3><p>Construção de ecossistemas com IA local/generativa (IBM AI Foundations / Google Cloud) e aplicações robóticas 3D distribuídas.</p></div>
+  <div class="timeline-item"><div class="timeline-year">2026</div><h3>Primeira Oportunidade Tech</h3><p>Atuação profissional no suporte de TI e infraestrutura física, consolidando vivência com redes e hardware corporativo.</p></div>
 </div></section>
 
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
-  });
-}, { threshold: 0.1 });
+<!-- SEÇÃO SECUNDÁRIA: FORA DO CÓDIGO (DUOLINGO WIDGET COMPACTO) -->
+<section class="curiosidades" style="margin: 40px auto; padding: 25px 20px; background: rgba(20, 20, 30, 0.4); border: 1px solid rgba(88,204,2,0.25); border-radius: 18px; max-width: 650px; text-align: center;">
+  <h3 style="color: #aaa; font-size: 0.9rem; font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 1px; margin-top: 0; margin-bottom: 18px;">
+    <i class="fa-solid fa-gamepad" style="color: #58cc02; margin-right: 6px;"></i> Fora do Código · Duolingo Status
+  </h3>
+  
+  <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="font-size: 34px;" title="Duo">🦉</span>
+      <div style="text-align: left;">
+        <div style="color: #fff; font-weight: 600; font-size: 0.95rem;">Inglês US</div>
+        <div style="color: #58cc02; font-size: 0.85rem;" id="duo-level">Carregando...</div>
+      </div>
+    </div>
 
-document.querySelectorAll('header, section h2, .sobre-mim p, .timeline-item').forEach((el) => {
-  el.classList.add('reveal');
-  observer.observe(el);
-});
+    <div style="display: flex; gap: 12px;">
+      <div style="background: rgba(0,0,0,0.4); padding: 6px 14px; border-radius: 10px; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <span style="font-size: 0.9rem;">🔥</span>
+        <strong id="duo-streak" style="color: #58cc02; font-size: 0.95rem;">--</strong> <span style="font-size: 0.78rem; color: #aaa;">Ofensiva</span>
+      </div>
+      <div style="background: rgba(0,0,0,0.4); padding: 6px 14px; border-radius: 10px; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <span style="font-size: 0.9rem;">⚡</span>
+        <strong id="duo-xp" style="color: #58cc02; font-size: 0.95rem;">--</strong> <span style="font-size: 0.78rem; color: #aaa;">XP Total</span>
+      </div>
+    </div>
+
+    <a href="https://pt.duolingo.com/profile/BrunoTi1" target="_blank" style="color: #58cc02; font-size: 0.85rem; text-decoration: none; border: 1px solid rgba(88,204,2,0.4); padding: 6px 14px; border-radius: 8px; font-weight: 500; transition: all 0.3s ease;">Acessar Perfil</a>
+  </div>
+</section>
+
+<script>
+  async function fetchDuolingoData() {
+    const fallbackData = { streak: '150+', xp: '12.500', level: 'B1 / Intermediário' };
+    try {
+      const apiUrl = encodeURIComponent('https://www.duolingo.com/2017-06-30/users?username=BrunoTi1');
+      const res = await fetch('https://api.allorigins.win/raw?url=' + apiUrl);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.users && data.users.length > 0) {
+          const user = data.users[0];
+          document.getElementById('duo-streak').innerText = user.streak ?? fallbackData.streak;
+          document.getElementById('duo-xp').innerText = user.totalXp ? user.totalXp.toLocaleString('pt-BR') : fallbackData.xp;
+          const englishCourse = user.courses ? user.courses.find(c => (c.learningLanguage || c.learning_language) === 'en') : null;
+          if (englishCourse) {
+            const level = englishCourse.level || Math.floor((englishCourse.xp || 0) / 2000);
+            document.getElementById('duo-level').innerText = 'Nível ' + level;
+          } else {
+            document.getElementById('duo-level').innerText = fallbackData.level;
+          }
+          return;
+        }
+      }
+    } catch(e) {
+      console.warn('Fallback Duolingo:', e);
+    }
+    document.getElementById('duo-streak').innerText = fallbackData.streak;
+    document.getElementById('duo-xp').innerText = fallbackData.xp;
+    document.getElementById('duo-level').innerText = fallbackData.level;
+  }
+  fetchDuolingoData();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('header, section h2, .sobre-mim p, .timeline-item, .curiosidades').forEach((el) => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
 </script>
 </body>
 </html>
